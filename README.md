@@ -1,4 +1,4 @@
-# elastic-hw
+# Úloha k workshopu
 
 Na stránce https://www.elastic.co/products si stáhněte a zprovozněte Elasticsearch, Kibanu a FileBeat.
 
