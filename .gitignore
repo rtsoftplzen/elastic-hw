@@ -1,0 +1,3 @@
+.docker/custom_elasticsearch.yml
+.docker/kibana.yml
+.docker/filebeat.yml
