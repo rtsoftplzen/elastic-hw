@@ -1,0 +1,12 @@
+# Ukázkový konfigurační soubor z https://github.com/elastic/elasticsearch-docker/blob/master/build/elasticsearch/elasticsearch.yml
+
+cluster.name: "docker-cluster"
+network.host: 0.0.0.0
+
+# minimum_master_nodes need to be explicitly set when bound on a public IP
+# set to 1 to allow single node clusters
+# Details: https://github.com/elastic/elasticsearch/pull/17288
+discovery.zen.minimum_master_nodes: 1
+
+# Doporučené nastavení pro vývoj (https://www.elastic.co/guide/en/elasticsearch/reference/6.2/docker.html#docker-cli-run-dev-mode)
+discovery.type: single-node

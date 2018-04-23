@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.2.4
+    container_name: rtsoft_elasticsearch
+    ports:
+      - 9200:9200
+    volumes:
+      - ./custom_elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana-oss:6.2.4
+    container_name: rtsoft_kibana
+    ports:
+      - 5601:5601
+    volumes:
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml
+    depends_on:
+      - elasticsearch
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:6.2.4
+    container_name: rtsoft_filebeat
+    volumes:
+      - ./filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - ../log:/mnt/log
+    depends_on:
+      - elasticsearch

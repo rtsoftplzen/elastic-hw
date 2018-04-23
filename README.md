@@ -8,6 +8,15 @@ Pro spuštění Kibany musíte mít zároveň spuštěný Elasticsearch. Chcete-
 Před spuštěním Filebeatu upravte konfigurační soubor filebeat.yml. Poté spusťte Filebeat příkazem filebeat.exe. 
 Zda vám vše běží můžete průběžně kontrolovat přes prohlížeč (localhost:9200 pro Elastisticsearch, localhost:5601 pro Kibanu).
 
+### Spuštění pomocí Dockeru:
+1. Zkopírovat všechny konfigurační soubory z ```.docker/install``` o úroveň výš. 
+2.
+	```
+	cd .docker
+	docker-compose up
+	```
+3. V prohlížeči otevřít [Kibanu](http://localhost:5601).
+
 ### Úkol pro Elasticsearch fandy:
 Nahrajte všechny soubory ze složky log do elasticsearche za použití filebeatu.
 Jakmile začne Filebeat zpracovávat data, tak se v Kibaně objeví nově vytvořený index.
